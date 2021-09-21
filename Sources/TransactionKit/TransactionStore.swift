@@ -7,10 +7,10 @@
 
 typealias TransactionStore = TransactionStoreReadable & TransactionStoreWritable
 
-typealias Key = String
-typealias Value = String
+public typealias Key = String
+public typealias Value = String
 
-protocol TransactionStoreReadable {
+public protocol TransactionStoreReadable {
     var all: [Key: Value] { get }
     var count: Int { get }
 
