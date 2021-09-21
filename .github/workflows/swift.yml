@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: wal/setup-swift@v4
+    - uses: fwal/setup-swift@v1
     - name: Get swift version
       run: swift --version # Swift 5.4
     - name: Build
