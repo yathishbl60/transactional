@@ -5,12 +5,12 @@
 //  Created by Yathi on 22/9/21.
 //
 
-public typealias TransactionStore = TransactionStoreReadable & TransactionStoreWritable
+typealias TransactionStore = TransactionStoreReadable & TransactionStoreWritable
 
-public typealias Key = String
-public typealias Value = String
+typealias Key = String
+typealias Value = String
 
-public protocol TransactionStoreReadable {
+protocol TransactionStoreReadable {
     var all: [Key: Value] { get }
     var count: Int { get }
 
@@ -18,7 +18,7 @@ public protocol TransactionStoreReadable {
     func count(value: Value) -> Int
 }
 
-public protocol TransactionStoreWritable {
+protocol TransactionStoreWritable {
     mutating func add(key: Key, value: Value)
     mutating func remove(key: Key)
 }
@@ -52,13 +52,9 @@ struct TransactionLocalStore: TransactionStore {
 
 }
 
-public struct TransactionStoreBuilder {
+struct TransactionStoreBuilder {
 
-    public init() {
-
-    }
-
-    public func build() -> TransactionStore {
+    func build() -> TransactionStore {
         TransactionLocalStore()
     }
 }

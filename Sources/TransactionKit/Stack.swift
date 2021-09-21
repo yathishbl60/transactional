@@ -5,25 +5,23 @@
 //  Created by Yathi on 22/9/21.
 //
 
-public struct Stack<Element> {
-
-    public init() { }
+struct Stack<Element> {
 
     private var elements: [Element] = []
 
-    public mutating func push(element: Element) {
+    mutating func push(element: Element) {
         elements.append(element)
     }
 
-    @discardableResult public mutating func pop() -> Element? {
+    @discardableResult mutating func pop() -> Element? {
         elements.popLast()
     }
 
-    public func peek() -> Element? {
+    func peek() -> Element? {
         elements.last
     }
 
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         elements.isEmpty
     }
 
